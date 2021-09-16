@@ -39,6 +39,11 @@ header {
   border-radius: 20px;
   max-width: 360px;
   margin: 0 auto;
+  margin-top: 30px;
+}
+main {
+  max-width: 360px;
+  margin: 0 auto;
 }
 .profile {
   background-color: #5847eb;
@@ -74,10 +79,19 @@ header {
   background-color: transparent;
   border: none;
   color: #bdc1ff;
+  font-weight: 300;
+  cursor: pointer;
+}
+.timing__button:hover {
+  color: #fff;
+}
+.timing__button.active {
+  color: #fff;
   font-weight: 500;
 }
 .item {
   border-radius: 20px;
+  margin-top: 15px;
 }
 .item__background {
   display: flex;
@@ -87,6 +101,7 @@ header {
 .item__background__image {
   margin-top: -10px;
   margin-right: 10px;
+  height: 70px;
 }
 .item.work {
   background-color: #ff8c66;
@@ -94,12 +109,29 @@ header {
 .item.play {
   background-color: #56c2e6;
 }
+.item.study {
+  background-color: #ff5c7c;
+}
+.item.exercise {
+  background-color: #4acf81;
+}
+.item.social {
+  background-color: #7536d3;
+}
+.item.self-care {
+  background-color: #f1c65b;
+}
 .item__content {
   position: relative;
   background-color: #1c1f4a;
-  border-radius: 20px;
-  margin-top: -50px;
+  border-radius: 16px;
+  margin-top: -30px;
   padding: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.item__content:hover {
+  background-color: #272c68;
 }
 .item__content__title {
   display: flex;
@@ -110,4 +142,80 @@ header {
   color: #fff;
   font-weight: 500;
   margin: 0;
+}
+.item__content__counting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item__content__counting__current {
+  font-weight: 300;
+  color: #fff;
+  font-size: 3rem;
+  margin: 0;
+}
+.item__content__counting__last {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1050px) {
+  body {
+    display: grid;
+    grid-template-columns: 262px 786px;
+    margin: 100px auto;
+    align-items: center;
+    justify-content: center;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-auto-rows: 231px;
+    gap: 20px;
+    max-width: 700px;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 230px;
+  }
+  .profile__picture {
+    margin-left: 20px;
+    height: 70px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+  .profile__description__name {
+    font-size: 3.5rem;
+    font-weight: 300;
+    max-width: 150px;
+    margin-bottom: 80px;
+  }
+  .timing {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 40px 20px;
+    background-color: #1c1f4a;
+  }
+  .timing__button {
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+  }
+  .item {
+    width: 232px;
+  }
+  .item__content__counting {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .item__content__counting__current {
+    margin-top: 20px;
+    font-size: 5rem;
+    margin-bottom: 0;
+  }
+  .item__content__counting__last {
+    margin-top: 5px;
+    margin-bottom: 23px;
+  }
 }

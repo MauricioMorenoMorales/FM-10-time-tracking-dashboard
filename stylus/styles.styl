@@ -14,6 +14,11 @@ header
 	border-radius 20px
 	max-width 360px
 	margin 0 auto
+	margin-top 30px
+
+main
+	max-width 360px
+	margin 0 auto
 
 .profile
 	background-color blue
@@ -44,10 +49,17 @@ header
 		background-color transparent
 		border none
 		color paleBlue
-		font-weight fwBold
+		font-weight fwThin
+		cursor pointer
+		&:hover
+			color white
+		&.active
+			color white
+			font-weight fwBold
 
 .item
 	border-radius 20px
+	margin-top 15px
 	&__background
 		display flex
 		justify-content flex-end
@@ -55,16 +67,29 @@ header
 		&__image
 			margin-top -10px
 			margin-right 10px
+			height 70px
 	&.work
 		background-color lightOrange
 	&.play
 		background-color softBlue
+	&.study
+		background-color lightRed
+	&.exercise
+		background-color limeGreen
+	&.social
+		background-color violet
+	&.self-care
+		background-color softOrange
 	&__content
 		position relative
 		background-color darkBlue
-		border-radius 20px
-		margin-top -50px
+		border-radius 16px
+		margin-top -30px
 		padding 20px
+		transition: .5s
+		cursor pointer
+		&:hover
+			background-color lighten(darkBlue, 10%)
 		&__title
 			display flex
 			align-items center
@@ -73,3 +98,68 @@ header
 				color white
 				font-weight fwBold
 				margin 0
+		&__counting
+			display flex
+			align-items center
+			justify-content space-between
+			&__current
+				font-weight fwThin
+				color white
+				font-size 3rem
+				margin 0
+			&__last
+				font-size 1.5rem
+
+@media screen and (min-width: 1050px)
+	body
+		display grid
+		grid-template-columns 262px 786px
+		margin 100px auto
+		align-items center
+		justify-content center
+	
+	main
+		display grid
+		grid-template-columns 33% 33% 33%
+		grid-auto-rows 231px
+		gap 20px
+		max-width 700px
+		margin-top 20px
+		margin-left 0
+		margin-right 0
+	
+	.profile
+		flex-direction column
+		align-items flex-start
+		min-width 230px
+		&__picture
+			margin-left 20px
+			height 70px
+			margin-bottom 30px
+			margin-top 10px
+		&__description__name
+			font-size 3.5rem
+			font-weight fwThin
+			max-width 150px
+			margin-bottom 80px
+	.timing
+		flex-direction column
+		align-items flex-start
+		margin 40px 20px
+		background-color darkBlue
+		&__button
+			margin-bottom 15px
+			font-size 1.7rem
+	
+	.item
+		width 232px
+		&__content__counting
+			flex-direction column
+			align-items flex-start
+			&__current
+				margin-top 20px
+				font-size 5rem
+				margin-bottom 0
+			&__last
+				margin-top 5px
+				margin-bottom 23px
