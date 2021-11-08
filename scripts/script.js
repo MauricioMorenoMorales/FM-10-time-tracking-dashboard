@@ -10,7 +10,9 @@ const loadData = async timeframe => {
 			: element.classList.remove('active'),
 	);
 	try {
-		const fetchResponse = await fetch('../data.json'),
+		const fetchResponse = await fetch(
+				'FM-10-time-tracking-dashboard/data.json',
+			),
 			jsonResponse = await fetchResponse.json();
 
 		let template = '';
