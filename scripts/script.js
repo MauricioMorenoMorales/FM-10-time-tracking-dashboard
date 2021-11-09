@@ -11,7 +11,7 @@ const loadData = async timeframe => {
 	);
 	try {
 		const fetchResponse = await fetch(
-				'/data.json',
+				'/FM-10-time-tracking-dashboard/data.json',
 			),
 			jsonResponse = await fetchResponse.json();
 
